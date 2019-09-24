@@ -16,6 +16,7 @@ class Pokemon
     def self.find(id,db)
         #gives nested array, using flatten to make one-dimensional array
        pokemon_object = db.execute("SELECT * FROM pokemon WHERE id=?", id).flatten
+       
        Pokemon.new(id: pokemon_object[0],name: pokemon_object[1],type: pokemon_object[2], db: db)
     end 
 
