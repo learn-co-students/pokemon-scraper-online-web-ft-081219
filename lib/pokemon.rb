@@ -1,21 +1,15 @@
 require 'pry'
 class Pokemon
   attr_accessor :id, :name, :type, :db 
-  def initialize(id, name, type, db)
-    @id = id
-    @name = name 
-    @type = type 
-    @db = db
+  def initialize(db)
+    self.db = db
+    self.id = id
+    self.name = name 
+    self.type = type 
+    
   end
   
-  def self.save(name, type)
-    #binding.pry 
+  def self.save(name, type, db)
     
-    sql =
-    "INSERT INTO pokemon (name,type)
-    VALUE (?, ?)"
-    
-    DB[:conn].execute(sql, self.name. self.type)
-    id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end 
 end
